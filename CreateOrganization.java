@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import CommonUtils.ExcelUtils;
+import CommonUtils.JavaUtils;
 import CommonUtils.PropertyFileUtils;
 import CommonUtils.WebDriverUtils;
 
@@ -24,6 +25,7 @@ public class CreateOrganization {
 		PropertyFileUtils fu= new PropertyFileUtils();
 		ExcelUtils excel = new ExcelUtils();
 		WebDriverUtils wd = new WebDriverUtils();
+		JavaUtils ju= new JavaUtils();
 	
 		//TO read data from Properties file	
 		String Browser = fu.getDataFromPropertyFile("browser");
@@ -59,7 +61,7 @@ public class CreateOrganization {
         //Organization Page
         driver.findElement(By.xpath("//img[@title=\"Create Organization...\"]")).click();
         // Add organization page
-        driver.findElement(By.name("accountname")).sendKeys(ORG);
+        driver.findElement(By.name("accountname")).sendKeys(ORG+ju.getRandomNumber());
         driver.findElement(By.xpath("//input[@value='T']")).click();
 
         WebElement drop = driver.findElement(By.name("assigned_group_id"));
