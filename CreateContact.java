@@ -78,6 +78,8 @@ public class CreateContact {
         WebElement LOGOUT = driver.findElement(By.linkText("Sign Out"));
         
         wd.click(driver, LOGOUT);
+        
+        driver.quit();
 
 	}
 

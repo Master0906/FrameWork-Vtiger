@@ -89,7 +89,7 @@ public class CreateOrganization {
          
         wd.click(driver, LOGOUT);
         
-        
+        driver.quit();
         
 
 	}
