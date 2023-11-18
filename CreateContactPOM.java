@@ -70,6 +70,8 @@ public class CreateContactPOM {
         ContactPage cp = new ContactPage(driver);
         cp.addContact(firstName, LastName);
         
+        
+        
         Thread.sleep(3000);
         //Handle Dropdown
         WebElement drop = cp.getDropDown();
